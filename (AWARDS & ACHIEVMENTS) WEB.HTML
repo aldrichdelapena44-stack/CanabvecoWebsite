@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="(STYLE) WEB.CSS"/>
+    <title>AWARDS & ACHIEVMENTS</title>
+</head>
+<body>
+    <header>
+        <h1>Awards & Achievments</h1>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="(HOME) WEB.HTML">Home</a></li>
+            <li><a href="(ABOUT US) WEB.HTML">About Us</a></li>
+            <li><a href="(PROJECTS) WEB.HTML">Projects</a></li>
+            <li><a href="(GALLERY) WEB.HTML">Gallery</a></li>
+            <li><a href="(AWARDS & ACHIEVMENTS) WEB.HTML">Awards</a></li>
+            <li><a href="(ORGANIZATIONAL STRUCTURE) WEB.HTML">Organizational Structure</a></li>
+            <li><a href="(MORALS) WEB.HTML" class="active">Morals</a></li>
+            <li><a href="(FAQS) WEB.HTML">FAQs</a></li>
+            <li><a href="(ADDRESS) WEB.HTML">Address</a></li>
+            <li><a href="(CONTACT) WEB.HTML">Contacts</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <div>
+    <main class="container">
+        <section class="gallery">
+        <!-- Item 1 -->
+        <article class="card">
+            <div class="image-wrap">
+                <img src="ELEMENTS/Award 1.jpeg" alt="Certicate of Participation"/>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Certicate of Participation of GROW A MANGROVE TREE </h3>
+                <p class="card-caption">GROW A MANGROVE TREE • 2023 </p>
+            </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="card">
+            <div class="image-wrap">
+                <img src="ELEMENTS/Award 2.jpeg" alt="Certificate of Appreciation"/>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Certificate of Appreciation</h3>
+                <p class="card-caption">Cultimating and Awarding Ceremony • 2023</p>
+            </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="card">
+            <div class="image-wrap">
+                <img src="ELEMENTS/Award 3.jpeg" alt="Certificate of Appreciation"/>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Third Place in SHORT MAKING CONTEST</h3>
+                <p class="card-caption">Cooperative Mounth Celebration • 2025</p>
+            </div>
+        </article>
+
+        <!-- Item 4 -->
+        <article class="card">
+            <div class="image-wrap">
+                <img src="ELEMENTS/Award 4.jpeg" alt="Certificate of Participation"/>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Certificate of Participation</h3>
+                <p class="card-caption">Cooperative Mounth Celebration • 2023</p>
+            </div>
+        </article>
+        
+        <!-- Item 4 -->
+        <article class="card">
+            <div class="image-wrap">
+                <img src="ELEMENTS/Award 5.jpg" alt="Other Awards/Certificates"/>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Other Awards/Certificates</h3>
+                <p class="card-caption">Certification • 2023</p>
+            </div>
+        </article>
+
+        <!-- Dagdagan pa ng items kung kailangan -->
+        </section>
+    </main>
+    </div>
+
+    <footer>
+    <p>&copy; 2025 CANABVECO <br> Contact Number: 0949-473-5173<br>Email: canabveco@gmail.com</p>
+</footer>
+    <script>
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 1150) {
+        navMenu.classList.remove("active");
+    }
+});
+</script>
+
+</body>
+</html>

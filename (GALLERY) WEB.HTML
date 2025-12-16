@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="(STYLE) WEB.CSS"/>
+<title>GALLERY</title>
+
+<style>
+/* BASIC RESET */
+* {
+    box-sizing: border-box;
+}
+
+/* BODY – footer bottom fix */
+body {
+    font-family: Arial, sans-serif;
+    background: rgba(124, 227, 248, 0.836);
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+/* HEADER */
+header {
+    background: #093457;
+    color: white;
+}
+
+/* ACCORDION */
+.accordion {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.accordion-section {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: 15px;
+    cursor: pointer;
+    background: #093457;
+    color: #fff;
+    font-weight: bold;
+}
+
+.accordion-content {
+    display: none;
+    padding: 15px;
+    background: #fafafa;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info {
+    padding: 10px;
+    background: #fafafa;
+}
+
+.info h3 {
+    margin: 0 0 5px;
+    font-size: 15px;
+    color: #333;
+}
+
+.info p {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+}
+
+/* MAIN CONTENT */
+main {
+    flex: 1;
+}
+
+/* FOOTER – ONLY CHANGE */
+footer {
+    width: 100%;
+    background: #093457;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+}
+
+footer p {
+    margin: 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Gallery</h1>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="(HOME) WEB.HTML">Home</a></li>
+            <li><a href="(ABOUT US) WEB.HTML">About Us</a></li>
+            <li><a href="(PROJECTS) WEB.HTML">Projects</a></li>
+            <li><a href="(GALLERY) WEB.HTML">Gallery</a></li>
+            <li><a href="(AWARDS & ACHIEVMENTS) WEB.HTML">Awards</a></li>
+            <li><a href="(ORGANIZATIONAL STRUCTURE) WEB.HTML">Organizational Structure</a></li>
+            <li><a href="(MORALS) WEB.HTML">Morals</a></li>
+            <li><a href="(FAQS) WEB.HTML">FAQs</a></li>
+            <li><a href="(ADDRESS) WEB.HTML">Address</a></li>
+            <li><a href="(CONTACT) WEB.HTML">Contacts</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+<div class="accordion">
+
+<!-- IMAGES -->
+<div class="accordion-section">
+    <div class="accordion-header">Images</div>
+    <div class="accordion-content">
+        <div class="gallery">
+
+            <div class="gallery-item">
+                <img src="ELEMENTS/Tree Planting 1.jpg">
+                <div class="info"><h3>Image 1</h3><p>Mangrove Tree planting.</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="ELEMENTS/Tree Planting 2.jpg">
+                <div class="info"><h3>Image 2</h3><p>Mangrove Tree planting.</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="ELEMENTS/Tree Planting 3.jpg">
+                <div class="info"><h3>Image 3</h3><p>Mangrove Tree planting.</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="ELEMENTS/Tree Planting 4.jpg">
+                <div class="info"><h3>Image 4</h3><p>Mangrove Tree planting.</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="ELEMENTS/Tree Planting 5.jpg">
+                <div class="info"><h3>Image 5</h3><p>Mangrove Tree planting.</p></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- VIDEOS -->
+<div class="accordion-section">
+    <div class="accordion-header">Videos</div>
+    <div class="accordion-content">
+        <div class="gallery">
+
+            <div class="gallery-item">
+                <video src="ELEMENTS/video1.mp4" controls></video>
+                <div class="info"><h3>Video 1</h3><p>Student Innovation anti Flies </p></div>
+            </div>
+
+            <div class="gallery-item">
+                <video src="ELEMENTS/Video3.mp4" controls=""></video>
+                <div class="info"><h3>Video 3</h3><p>Mangrove Tree Planting.</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <video src="ELEMENTS/Video4.mp4" controls=""></video>
+                <div class="info"><h3>Video 4</h3><p>Mangrove Tree Planting.</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <video src="ELEMENTS/Video6.mp4" controls></video>
+                <div class="info"><h3>Video 6</h3><p>CANABVECO Director Melecia J. Mendoza's thank you message.</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <video src="ELEMENTS/Video5 (2).mp4" controls=""></video>
+                <div class="info"><h3>Video 5</h3><p>During the visitation of new members in Poultry Farm.</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <video src="ELEMENTS/Video2.mp4" controls></video>
+                <div class="info"><h3>Video 2</h3><p>Mangrove Tree Planting.</p></div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+</div>
+</main>
+
+<footer>
+    <p>
+        &copy; 2025 CANABVECO<br>
+        Contact Number: 0949-473-5173<br>
+        Email: canabveco@gmail.com
+    </p>
+</footer>
+
+<script>
+/* ACCORDION */
+const headers = document.querySelectorAll('.accordion-header');
+headers.forEach(header => {
+    header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const isOpen = content.style.display === 'block';
+        document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
+        if (!isOpen) content.style.display = 'block';
+    });
+});
+
+/* NAV TOGGLE */
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 1150) {
+        navMenu.classList.remove("active");
+    }
+});
+</script>
+
+</body>
+</html>

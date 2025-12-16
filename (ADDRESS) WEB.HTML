@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="(STYLE) WEB.CSS"/>
+    <title>ADDRESS</title>
+</head>
+<body>
+    <header>
+        <h1>Address</h1>
+        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="(HOME) WEB.HTML">Home</a></li>
+            <li><a href="(ABOUT US) WEB.HTML">About Us</a></li>
+            <li><a href="(PROJECTS) WEB.HTML">Projects</a></li>
+            <li><a href="(GALLERY) WEB.HTML">Gallery</a></li>
+            <li><a href="(AWARDS & ACHIEVMENTS) WEB.HTML">Awards</a></li>
+            <li><a href="(ORGANIZATIONAL STRUCTURE) WEB.HTML">Organizational Structure</a></li>
+            <li><a href="(MORALS) WEB.HTML" class="active">Morals</a></li>
+            <li><a href="(FAQS) WEB.HTML">FAQs</a></li>
+            <li><a href="(ADDRESS) WEB.HTML">Address</a></li>
+            <li><a href="(CONTACT) WEB.HTML">Contacts</a></li>
+        </ul>
+    </nav>
+    </header>
+    <div class="address-card">
+        
+        
+        <div class="map-wrap">
+        <img src="ELEMENTS/MAP.jpg" alt="CANABVECO Location Map">
+        </div>
+
+        
+        <div class="address-info">
+        <img src="https://img.icons8.com/fluency/48/marker.png" alt="map icon">
+        <p><strong>Address:</strong> Brgy Gaboc Purok 5, Mercedes, Camarines Norte</p>
+        </div>
+
+
+    <br>
+    </div>
+    <br><br><br><br><br><br><br>
+    <footer>
+    <p>&copy; 2025 CANABVECO <br> Contact Number: 0949-473-5173<br>Email: canabveco@gmail.com</p>
+</footer>
+    <script>
+        const navToggle = document.querySelector(".nav-toggle");
+        const navMenu = document.querySelector(".nav-menu");
+
+        navToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 1150) {
+                navMenu.classList.remove("active");
+            }
+        });
+    </script>
+
+</body>
+</html>

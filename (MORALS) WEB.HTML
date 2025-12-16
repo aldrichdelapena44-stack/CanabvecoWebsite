@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Philosophy</title>
+<link rel="stylesheet" href="(STYLE) WEB.CSS">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    /* Philosophy Section Horizontal Layout */
+    .philosophy-section {
+        display: flex;
+        flex-direction: row; /* horizontal on large screens */
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 60px 20px;
+        flex-wrap: wrap; /* wrap on smaller screens */
+        background: #e6f0f5;
+        min-height: calc(100vh - 150px);
+    }
+
+    .philosophy-card {
+        flex: 1 1 300px; /* grow, shrink, base width */
+        max-width: 350px;
+        background: #fff;
+        border-left: 6px solid #045578;
+        border-radius: 12px;
+        padding: 30px 25px;
+        box-shadow: 0 6px 18px rgba(0, 85, 120, 0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-left-color 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Different borders for each card */
+    .card-vision { border-left-color: #045578; }
+    .card-mission { border-left-color: #045578; }
+    .card-values { border-left-color: #045578; }
+
+    .philosophy-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 85, 120, 0.15);
+    }
+
+    .philosophy-card i {
+        font-size: 36px;
+        color: #045578;
+        margin-bottom: 12px;
+    }
+
+    .philosophy-card h2 {
+        margin: 0 0 8px;
+        color: #045578;
+        font-size: 1.5rem;
+    }
+
+    .philosophy-card h1,
+    .philosophy-card h4 {
+        margin: 0;
+        font-weight: 400;
+        color: #045578;
+        line-height: 1.5;
+    }
+
+    /* Responsive: stack vertically on small screens */
+    @media (max-width: 992px) {
+        .philosophy-section {
+            flex-direction: column;
+            align-items: center;
+        }
+        .philosophy-card {
+            max-width: 90%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Morals</h1>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="(HOME) WEB.HTML">Home</a></li>
+            <li><a href="(ABOUT US) WEB.HTML">About Us</a></li>
+            <li><a href="(PROJECTS) WEB.HTML">Projects</a></li>
+            <li><a href="(GALLERY) WEB.HTML">Gallery</a></li>
+            <li><a href="(AWARDS & ACHIEVMENTS) WEB.HTML">Awards</a></li>
+            <li><a href="(ORGANIZATIONAL STRUCTURE) WEB.HTML">Organizational Structure</a></li>
+            <li><a href="(MORALS) WEB.HTML" class="active">Morals</a></li>
+            <li><a href="(FAQS) WEB.HTML">FAQs</a></li>
+            <li><a href="(ADDRESS) WEB.HTML">Address</a></li>
+            <li><a href="(CONTACT) WEB.HTML">Contacts</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="philosophy-section">
+    <!-- Vision -->
+    <div class="philosophy-card card-vision">
+        <i class="fa-solid fa-eye"></i>
+        <h2>Vision</h2>
+        <h1>
+            A progressive and stable cooperative contributing to the continuous growth in poultry farming and an integral participant in the food security of the nation.
+        </h1>
+    </div>
+
+    <!-- Mission -->
+    <div class="philosophy-card card-mission">
+        <i class="fa-solid fa-bullseye"></i>
+        <h2>Mission</h2>
+        <h1>
+            To strive for utmost efficiency in providing support services in agricultural food production, especially in poultry farming.
+        </h1>
+    </div>
+
+    <!-- Core Values -->
+    <div class="philosophy-card card-values">
+        <i class="fa-solid fa-handshake"></i>
+        <h2>Core Values</h2>
+        <h1>
+            Commitment, integrity, and excellence in all services provided to support the agricultural community.
+        </h1>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 CANABVECO <br> Contact Number: 0949-473-5173<br>Email: canabveco@gmail.com</p>
+</footer>
+
+<script>
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 1150) navMenu.classList.remove("active");
+});
+
+/* Highlight active page */
+const navLinks = document.querySelectorAll('.nav-menu ul li a');
+const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+navLinks.forEach(link => {
+    const linkPage = link.getAttribute('href').split("/").pop().toLowerCase();
+    if (linkPage === currentPage) link.classList.add('active');
+    else link.classList.remove('active');
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="(STYLE) WEB.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Contact</h1>
+
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="(HOME) WEB.HTML">Home</a></li>
+            <li><a href="(ABOUT US) WEB.HTML">About Us</a></li>
+            <li><a href="(PROJECTS) WEB.HTML">Projects</a></li>
+            <li><a href="(GALLERY) WEB.HTML">Gallery</a></li>
+            <li><a href="(AWARDS & ACHIEVMENTS) WEB.HTML">Awards</a></li>
+            <li><a href="(ORGANIZATIONAL STRUCTURE) WEB.HTML">Organizational Structure</a></li>
+            <li><a href="(MORALS) WEB.HTML" class="active">Morals</a></li>
+            <li><a href="(FAQS) WEB.HTML">FAQs</a></li>
+            <li><a href="(ADDRESS) WEB.HTML">Address</a></li>
+            <li><a href="(CONTACT) WEB.HTML">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="contact-wrapper">
+    <div class="contact-page">
+
+    <div class="contact-info">
+        <h2>Connect With Us</h2>
+
+        <p class="contact-desc">
+            We value your questions, feedback, and partnership opportunities.
+            Feel free to reach out to us anytime through our official social
+            media platforms below.
+            <br><br>
+            <strong>Here are our social media accounts:</strong>
+        </p>
+
+        <a href="https://www.facebook.com/profile.php?id=61550883231028" target="_blank" class="contact-link">
+            <i class="fab fa-facebook-f"></i>
+            <span>CANABVECO Main Page</span>
+        </a>
+
+        <a href="https://www.instagram.com/canabveco/?fbclid=IwY2xjawOtcaxleHRuA2FlbQIxMABicmlkETE2dmFoejE3U0RlR2N2alJGc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHtppTb3QdAUoOM-JLiXUie3r9vlcNfWLnkTPiENibnQ4HCETISxIDVmntvWO_aem_ZmFrZWR1bW15MTZieXRlcw#" target="_blank" class="contact-link">
+            <i class="fab fa-instagram"></i>
+            <span>canabveco</span>
+        </a>
+
+        <a href="https://www.tiktok.com/@canabveco" target="_blank" class="contact-link">
+            <i class="fab fa-tiktok"></i>
+            <span>canabveco</span>
+        </a>
+    </div>
+
+</section>
+</div>
+</section>
+
+<footer>
+    <p>&copy; 2025 CANABVECO <br> Contact Number: 0949-473-5173<br>Email: canabveco@gmail.com</p>
+</footer>
+
+<script>
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 1150) {
+        navMenu.classList.remove("active");
+    }
+});
+</script>
+
+<script>
+const form = document.getElementById("contactForm");
+const submitBtn = document.getElementById("submitBtn");
+
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const messageInput = document.getElementById("message");
+
+const nameError = document.getElementById("nameError");
+const emailError = document.getElementById("emailError");
+const messageError = document.getElementById("messageError");
+
+submitBtn.disabled = true;
+
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function validateForm() {
+    let valid = true;
+
+    if (nameInput.value.trim() === "") {
+        nameError.textContent = "Name is required.";
+        nameError.style.display = "block";
+        valid = false;
+    } else {
+        nameError.style.display = "none";
+    }
+
+    if (!isValidEmail(emailInput.value)) {
+        emailError.textContent = "Enter a valid email address.";
+        emailError.style.display = "block";
+        valid = false;
+    } else {
+        emailError.style.display = "none";
+    }
+
+    if (messageInput.value.trim() === "") {
+        messageError.textContent = "Message cannot be empty.";
+        messageError.style.display = "block";
+        valid = false;
+    } else {
+        messageError.style.display = "none";
+    }
+
+    submitBtn.disabled = !valid;
+    return valid;
+}
+
+[nameInput, emailInput, messageInput].forEach(input => {
+    input.addEventListener("input", validateForm);
+});
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    submitBtn.classList.add("loading");
+    submitBtn.disabled = true;
+
+    const messageData = {
+        name: nameInput.value,
+        email: emailInput.value,
+        message: messageInput.value,
+        date: new Date().toLocaleString()
+    };
+
+    /* 🔹 LOCAL FUNCTIONALITY (NO PHP REQUIRED) */
+    setTimeout(() => {
+        let messages = JSON.parse(localStorage.getItem("contactMessages")) || [];
+        messages.push(messageData);
+        localStorage.setItem("contactMessages", JSON.stringify(messages));
+
+        submitBtn.classList.remove("loading");
+        alert("✅ Message sent successfully!");
+        form.reset();
+        submitBtn.disabled = true;
+    }, 1500);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="(STYLE) WEB.CSS"/>
+    <title>FAQS</title>
+</head>
+<body>
+    <header>
+        <h1>FAQs</h1>
+        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="(HOME) WEB.HTML">Home</a></li>
+            <li><a href="(ABOUT US) WEB.HTML">About Us</a></li>
+            <li><a href="(PROJECTS) WEB.HTML">Projects</a></li>
+            <li><a href="(GALLERY) WEB.HTML">Gallery</a></li>
+            <li><a href="(AWARDS & ACHIEVMENTS) WEB.HTML">Awards</a></li>
+            <li><a href="(ORGANIZATIONAL STRUCTURE) WEB.HTML">Organizational Structure</a></li>
+            <li><a href="(MORALS) WEB.HTML" class="active">Morals</a></li>
+            <li><a href="(FAQS) WEB.HTML">FAQs</a></li>
+            <li><a href="(ADDRESS) WEB.HTML">Address</a></li>
+            <li><a href="(CONTACT) WEB.HTML">Contacts</a></li>
+        </ul>
+    </nav>
+    </header>
+    <section class="projects">
+        <div class="card">
+
+                </header>
+    <h1>Frequently Asked Questions About Cooperatives</h1>
+    
+    <div class="faq">
+        <div class="question">1. What is a cooperative?</div>
+        <div class="answer">
+            A cooperative is a member-owned business organization where members collaborate to meet common economic, social, or cultural needs through a jointly owned and democratically controlled enterprise.
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="question">2. How does a cooperative work?</div>
+        <div class="answer">
+            CANABVECO operate on democratic principles where each member has an equal say in decision-making because of the one man one vote rule, regardless of their level of investment. Profits are distributed among members based on their participation or usage.
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="question">3. What are the benefits of joining a cooperative?</div>
+        <div class="answer">
+            Benefits include access to affordable goods or services, shared profits, democratic control, community development, and the opportunity to participate actively in decision-making and be able to gain additional knowledge by trainings and seminars.
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="question">4. What types of cooperatives are there?</div>
+        <div class="answer">
+            There are various types such as consumer cooperatives, producer cooperatives, worker cooperatives, housing cooperatives, agricultural cooperatives, and service cooperatives.
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="question">5. How are cooperatives registered or formed?</div>
+        <div class="answer">
+            Cooperatives are typically formed by a group of individuals with common needs. They register with relevant government agencies, draft bylaws, and follow legal procedures to become officially recognized.
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="question">6. How are profits or savings shared among members?</div>
+        <div class="answer">
+            Profits or savings are distributed based on the member's level of participation, usage, or contribution, as defined in the cooperative’s bylaws.
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="question">7. What is the governance structure of a cooperative?</div>
+        <div class="answer">
+            Cooperatives are governed by a board of directors elected by members, with day-to-day operations managed by appointed officers or managers, all following democratic principles.
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="question">8. How can I become a member?</div>
+        <div class="answer">
+            Interested individuals usually apply for membership by completing an application form, paying membership fees or shares, and agreeing to abide by the cooperative’s rules and lastly attending Pre-membership Education Seminar(PMES).
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="question">9. What are the legal requirements to establish a cooperative?</div>
+        <div class="answer">
+            Legal requirements vary by country but generally include registration, drafting bylaws, appointing officers, and complying with local laws governing cooperatives.
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="question">10. How do cooperatives support community development?</div>
+        <div class="answer">
+            Cooperatives support community development by creating jobs, offering affordable services, promoting local economic growth, and empowering members to participate in decision-making.
+        </div>
+    </div>
+
+
+
+        </div>
+    </section>
+    <br>
+    <footer>
+    <p>&copy; 2025 CANABVECO <br> Contact Number: 0949-473-5173<br>Email: canabveco@gmail.com</p>
+</footer>
+    <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    });
+
+    window.addEventListener("resize", () => {
+    if (window.innerWidth > 1150) {
+        navMenu.classList.remove("active");
+    }
+    });
+    </script>
+<script>
+    // FAQ toggle
+const faqs = document.querySelectorAll(".faq");
+
+faqs.forEach(faq => {
+    const question = faq.querySelector(".question");
+    question.addEventListener("click", () => {
+        // Close all other FAQs
+        faqs.forEach(f => {
+            if(f !== faq) f.classList.remove("active");
+        });
+        // Toggle current FAQ
+        faq.classList.toggle("active");
+    });
+});
+</script>
+    
+
+</body>
+</html>

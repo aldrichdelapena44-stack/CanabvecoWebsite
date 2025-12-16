@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="(STYLE) WEB.CSS"/>
+    <title>HOME</title>
+</head>
+
+<body>
+
+<header>
+    <img src="ELEMENTS/Logo.png" alt="Logo" width="10%">
+    <h1>
+        Camarines Norte Agriculture Business Venture Cooperative <br>
+        CANABVECO
+    </h1>
+
+    <!-- Hamburger button -->
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="(HOME) WEB.HTML">Home</a></li>
+            <li><a href="(ABOUT US) WEB.HTML">About Us</a></li>
+            <li><a href="(PROJECTS) WEB.HTML">Projects</a></li>
+            <li><a href="(GALLERY) WEB.HTML">Gallery</a></li>
+            <li><a href="(AWARDS & ACHIEVMENTS) WEB.HTML">Awards</a></li>
+            <li><a href="(ORGANIZATIONAL STRUCTURE) WEB.HTML">Organizational Structure</a></li>
+            <li><a href="(MORALS) WEB.HTML" class="active">Morals</a></li>
+            <li><a href="(FAQS) WEB.HTML">FAQs</a></li>
+            <li><a href="(ADDRESS) WEB.HTML">Address</a></li>
+            <li><a href="(CONTACT) WEB.HTML">Contacts</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<section class="Home-White-Background">
+    <h2>Welcome! to our Cooperative</h2>
+    <p>To empower local farmers and promote sustainable agricultural development in the province.</p>
+</section>
+
+<section class="carousel">
+    <div class="slides">
+        <div class="slide"><img src="ELEMENTS/Home image4.jpg"></div>
+        <div class="slide"><img src="ELEMENTS/Home image1.jpg"></div>
+        <div class="slide"><img src="ELEMENTS/Home image2.jpg"></div>
+        <div class="slide"><img src="ELEMENTS/Home image3.jpg"></div>
+        <div class="slide"><img src="ELEMENTS/Home image4.jpg"></div>
+        <div class="slide"><img src="ELEMENTS/Home image1.jpg"></div>
+    </div>
+
+    <button class="arrow left">&#10094;</button>
+    <button class="arrow right">&#10095;</button>
+
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 CANABVECO <br> Contact Number: 0949-473-5173<br>Email: canabveco@gmail.com</p>
+</footer>
+</body>
+</html>
+<script>
+/* ===== Hamburger Menu ===== */
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 1150) {
+        navMenu.classList.remove("active");
+    }
+});
+
+/* ===== Carousel ===== */
+const slides = document.querySelector(".slides");
+const slideEls = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+let index = 1;
+let slideWidth = slides.clientWidth;
+let isAnimating = false;
+let autoTimer, idleTimer;
+
+slides.style.transform = `translateX(${-slideWidth * index}px)`;
+
+function updateDots() {
+    dots.forEach(d => d.classList.remove("active"));
+    let real = index - 1;
+    if (real < 0) real = dots.length - 1;
+    if (real >= dots.length) real = 0;
+    dots[real].classList.add("active");
+}
+
+function move() {
+    if (isAnimating) return;
+    isAnimating = true;
+    slides.style.transition = "transform 0.6s ease-in-out";
+    slides.style.transform = `translateX(${-slideWidth * index}px)`;
+    updateDots();
+}
+
+function next() {
+    if (isAnimating) return;
+    index++;
+    move();
+}
+
+function prev() {
+    if (isAnimating) return;
+    index--;
+    move();
+}
+
+slides.addEventListener("transitionend", () => {
+    isAnimating = false;
+    if (index === slideEls.length - 1) {
+        slides.style.transition = "none";
+        index = 1;
+        slides.style.transform = `translateX(${-slideWidth * index}px)`;
+    }
+    if (index === 0) {
+        slides.style.transition = "none";
+        index = slideEls.length - 2;
+        slides.style.transform = `translateX(${-slideWidth * index}px)`;
+    }
+});
+
+function startAuto() {
+    autoTimer = setInterval(next, 5000);
+}
+
+function userAction() {
+    clearInterval(autoTimer);
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => {
+        if (!isAnimating) startAuto();
+    }, 5000);
+}
+
+document.querySelector(".arrow.right").onclick = () => { next(); userAction(); };
+document.querySelector(".arrow.left").onclick = () => { prev(); userAction(); };
+
+dots.forEach((dot, i) => {
+    dot.onclick = () => {
+        index = i + 1;
+        move();
+        userAction();
+    };
+});
+
+window.addEventListener("resize", () => {
+    slideWidth = slides.clientWidth;
+    slides.style.transition = "none";
+    slides.style.transform = `translateX(${-slideWidth * index}px)`;
+});
+
+window.addEventListener("load", () => {
+    slideWidth = slides.clientWidth;
+    slides.style.transition = "none";
+    slides.style.transform = `translateX(${-slideWidth * index}px)`;
+});
+
+startAuto();
+
+
+</script>
+
+
+</body>
+</html>

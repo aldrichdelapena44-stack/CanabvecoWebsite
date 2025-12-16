@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects</title>
+<link rel="stylesheet" href="(STYLE) WEB.CSS">
+
+<style>
+/* ======================= GENERAL ======================= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ======================= NAV ======================= */
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #093457;
+    font-weight: bold;
+}
+
+.nav-toggle {
+    display: none; /* optional for mobile */
+}
+
+/* ======================= PROJECTS INTRO ======================= */
+.projects-intro {
+    text-align: center;
+    padding: 20px;
+    color: #000;
+}
+
+/* ======================= PROJECTS SLIDER ======================= */
+.projects-slider {
+    width: 100%;
+    overflow: hidden;
+    margin: 40px 0;
+}
+
+.slider-track {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.slide-card {
+    flex: 0 0 auto;
+    min-width: 280px;
+    margin-right: 30px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.slide-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.slide-card h3 {
+    padding: 10px;
+    font-size: 1rem;
+    color: #093457;
+}
+
+/* ======================= PROJECTS GRID ======================= */
+.projects-grid {
+    display: flex;
+    flex-wrap: nowrap; /* keep 3 cards in one row on desktop */
+    justify-content: center; /* center cards */
+    gap: 30px; /* equal spacing */
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    flex: 0 0 300px; /* fixed width for equal spacing */
+    text-align: center;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    margin: 10px 0 5px;
+    color: #093457;
+}
+
+.project-card p {
+    padding: 0 15px 15px;
+    color: #555;
+}
+
+/* ======================= FOOTER ======================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #045578;
+    color: #fff;
+}
+
+/* ======================= RESPONSIVE ======================= */
+@media (max-width: 992px) {
+    .projects-grid {
+        flex-wrap: wrap; /* stack cards */
+    }
+    .project-card {
+        flex: 0 1 45%; /* 2 per row */
+    }
+}
+@media (max-width: 600px) {
+    .project-card {
+        flex: 0 1 90%; /* 1 per row */
+    }
+    .slide-card {
+        min-width: 220px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Projects</h1>
+    <button class="nav-toggle2" aria-label="Toggle navigation">☰</button>
+    <nav class="nav-menu2">
+
+    
+        <ul>
+            <li><a href="(HOME) WEB.HTML">Home</a></li>
+            <li><a href="(ABOUT US) WEB.HTML">About Us</a></li>
+            <li><a href="(PROJECTS) WEB.HTML">Projects</a></li>
+            <li><a href="(GALLERY) WEB.HTML">Gallery</a></li>
+            <li><a href="(AWARDS & ACHIEVMENTS) WEB.HTML">Awards</a></li>
+            <li><a href="(ORGANIZATIONAL STRUCTURE) WEB.HTML">Organizational Structure</a></li>
+            <li><a href="(MORALS) WEB.HTML">Morals</a></li>
+            <li><a href="(FAQS) WEB.HTML">FAQs</a></li>
+            <li><a href="(ADDRESS) WEB.HTML">Address</a></li>
+            <li><a href="(CONTACT) WEB.HTML">Contacts</a></li>
+        </ul>
+    </nav>
+    
+</header>
+
+<section class="projects-intro">
+    <p>
+        CANABVECO actively participates in agricultural development, environmental
+        sustainability, and community empowerment through various projects and initiatives.
+    </p>
+</section>
+
+<!-- Infinite Slider -->
+<section class="projects-slider">
+    <div class="slider-track">
+        <div class="slide-card"><img src="ELEMENTS/Tree Planting 1.jpg"><h3>Tree Planting Program</h3></div>
+        <div class="slide-card"><img src="ELEMENTS/Tree Planting 2.jpg"><h3>Environmental Sustainability</h3></div>
+        <div class="slide-card"><img src="ELEMENTS/Picture 1.jpg"><h3>Community Engagement</h3></div>
+        <div class="slide-card"><img src="ELEMENTS/Tree Planting 3.jpg"><h3>Tree Growing Activity</h3></div>
+        <div class="slide-card"><img src="ELEMENTS/Tree Planting 4.jpg"><h3>Green Community Drive</h3></div>
+        <div class="slide-card"><img src="ELEMENTS/Picture 2.jpg"><h3>Agricultural Support</h3></div>
+    </div>
+</section>
+
+<!-- Projects Grid Below Slider (3 Cards) -->
+<section class="projects-grid">
+    <div class="project-card">
+        <img src="ELEMENTS/Tree Planting 3.jpg" alt="Tree Growing Activity">
+        <h3>Tree Growing Activity</h3>
+        <p>Promoting environmental responsibility and sustainability.</p>
+    </div>
+
+    <div class="project-card">
+        <img src="ELEMENTS/Tree Planting 4.jpg" alt="Green Community Drive">
+        <h3>Green Community Drive</h3>
+        <p>Strengthening cooperation among members and volunteers.</p>
+    </div>
+
+    <div class="project-card">
+        <img src="ELEMENTS/Picture 2.jpg" alt="Agricultural Support">
+        <h3>Agricultural Support</h3>
+        <p>Providing farmers access to shared resources and training.</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 CANABVECO <br> Contact Number: 0949-473-5173<br>Email: canabveco@gmail.com</p>
+</footer>
+
+<script>
+
+
+        const navToggle2 = document.querySelector(".nav-toggle2");
+        const navMenu2 = document.querySelector(".nav-menu2");
+
+        navToggle2.addEventListener("click", () => {
+            navMenu2.classList.toggle("active");
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 1150) {
+                navMenu2.classList.remove("active");
+            }
+        });
+        
+
+
+
+// NAV TOGGLE
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector(".nav-menu");
+navToggle.addEventListener("click", () => navMenu.classList.toggle("active"));
+
+// ======================= INFINITE SLIDER JS =======================
+const track = document.querySelector('.slider-track');
+const slides = Array.from(track.children);
+let totalWidth = 0;
+
+// Clone slides for seamless loop
+slides.forEach(slide => {
+    const clone = slide.cloneNode(true);
+    track.appendChild(clone);
+});
+
+// Calculate total width
+const allSlides = Array.from(track.children);
+allSlides.forEach(slide => {
+    totalWidth += slide.offsetWidth + parseInt(getComputedStyle(slide).marginRight);
+});
+track.style.width = totalWidth + 'px';
+
+// Animate slider
+let pos = 0;
+const speed = 1; // pixels per frame, increase for faster movement
+
+function animate() {
+    pos -= speed;
+    if (pos <= -totalWidth / 2) pos = 0; // reset after first set
+    track.style.transform = `translateX(${pos}px)`;
+    requestAnimationFrame(animate);
+}
+
+requestAnimationFrame(animate); 
+</script>
+
+</body>
+</html>
